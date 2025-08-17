@@ -17,7 +17,7 @@ class CriterionComparisonController extends Controller
     {
         $criteria = Criterion::select(['id', 'name'])->get();
 
-        return view('index', compact('criteria'));
+        return view('pages.comparison.criteria', compact('criteria'));
     }
 
     public function store(Request $request): RedirectResponse
