@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('alternative_comparisons', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('criterion_id')->constrained('criteria')->onDelete('cascade');
             $table->foreignId('alternative_left_id')->constrained('alternatives')->onDelete('cascade');
             $table->foreignId('alternative_right_id')->constrained('alternatives')->onDelete('cascade');
             $table->float('value');

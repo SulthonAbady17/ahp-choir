@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Alternative;
 use App\Models\Criterion;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -25,6 +26,18 @@ class DatabaseSeeder extends Seeder
         foreach ($criteria as $criterion) {
             Criterion::updateOrCreate([
                 'name' => $criterion['name'],
+            ]);
+        }
+
+        $alternatives = [
+            ['id' => 1, 'name' => 'Andi'],
+            ['id' => 2, 'name' => 'Raka'],
+            ['id' => 3, 'name' => 'Chiquita'],
+        ];
+
+        foreach ($alternatives as $alternative) {
+            Alternative::updateOrCreate([
+                'name' => $alternative['name'],
             ]);
         }
 
